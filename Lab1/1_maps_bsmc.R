@@ -4,31 +4,22 @@
 
 #first things is first, set you working drive so that you can save your data into a specified folder
 
-setwd("C:/C.drive_011110/Bamfield/MPA/GIS lab and intro")
+setwd("/Users/jpwrobinson/Documents/git_repos/mpa-bmsc")
+setwd("/Users/IMAC3/Documents/git-jpwrobinson/mpa-bmsc")
 
-# how to run code
-a<- 1+1
-a
-b <-a
-a<-3*3
-
-#what does the > mean at the bottom?
-#what does the + mean
-a<-3+
-
-#hit ctrl s to save
 #In R you can load packages from libraries where script has already been written
+
 #first you need to install the package
-#give them time to load, you will see a little stop sign when you run the code
+
 install.packages ("maptools")
-#install.packages ("raster")
 install.packages ("sp")
-intall.packages ("foreign")
+install.packages ("foreign")
 install.packages ("grid")
 install.packages ("lattice")
 install.packages ("ggplot2")
 install.packages ("ggmap")
 install.packages ("mapproj")
+install.packages ("rgeos")
 
 #then you load the library
 #you have to reload the library each time you open R, but you only have to install.packages once in your life/computer
@@ -43,14 +34,17 @@ library(ggmap)
 library(mapproj)
 
 #lets load up some map data
+## <- is used in R to assign objects to your workspace 
 map.world<-map_data(map="world")
+
+## the head command shows us the top 6 rows of an object
 head(map.world)
 
 #plot a map
 ggplot(map.world, aes(long, lat, group=group))+geom_polygon()+
   labs(title = "World map in R")
 
-#create a map object
+#create a map object by saving with the <- sign
 firstmap<-ggplot(map.world, aes(long, lat, group=group))+geom_polygon()+
   labs(title = "World map in R")
 firstmap
@@ -139,7 +133,7 @@ ggmap(bmsc) + geom_point(data = bmsc.pts, aes(x =long, y= lat,size = density), a
 #OR another way to plot this..
 #First change time into a POSIXct object. 
 #load your data
-bmsc.pts <-read.csv("GPStest.csv")
+bmsc.pts <-read.csv("lab1/GPStest.csv")
 
 #check to see if your data loaded correctly
 bmsc.pts
@@ -188,5 +182,4 @@ sp.grass <- SpatialPolygons( list(  Polygons(list(Polygon(grass.pts2)), 1)))
 plot(sp.grass, col="green", border="green")
 
 library(rgeos)
-?gArea
 gArea(sp.grass)
