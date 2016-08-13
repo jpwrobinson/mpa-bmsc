@@ -15,6 +15,8 @@ http://cran.stat.sfu.ca/
 
 https://www.rstudio.com/products/rstudio/download2/
 
+*If the internet is slow, we will pass around some usb sticks with windows/mac installers*
+
 **3. Install some packages in R.**
 
 Open R Studio and copy-paste these lines into the 'console' in the bottom-left hand window.
@@ -30,6 +32,8 @@ install.packages("mapproj")
 install.packages("rgeos")
 install.packages("grid")
 ```
+
+In the console you should see R attempting to download and install 'packages'. Let this run until everything is installed.
 
 **4. Create a folder on your desktop called *MPA-labs***
 
