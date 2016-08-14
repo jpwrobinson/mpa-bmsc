@@ -104,11 +104,17 @@ bmsc<-get_map(location=c(lon=-125.1356,lat=48.83528), zoom = 19,maptype=c("satel
 BMSC.map<-ggmap(bmsc)+labs(title="BMSC")
 print(BMSC.map)
 
+#-----------------------------------------------------------------------------
+#----------------------HEAD OUTSIDE TO COLLECT GPS POINTS---------------------
+#-----------------------------------------------------------------------------
+#-----------------------------------------------------------------------------
+
 #lets add up the data points that you took from around campus
-#you excel sheet needs to be saved as a .csv (comma seperated file)
+#your excel sheet needs to be SAVED AS A .csv (comma seperated file)
 #you should have the columns names set as "lat", "long" (remembers longs are negative), and "location" and "time"
 #time has to be in a special format
 
+# read.csv is used to read in raw data in R. S
 bmsc.pts <-read.csv("GPStest.csv")
 
 #create a map object that we can build upon
