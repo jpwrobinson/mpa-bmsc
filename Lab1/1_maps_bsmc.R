@@ -1,4 +1,5 @@
 #Lab 1 Marine Protected Areas
+# August 2016
 
 #Annote your files by using # before the text 
 
@@ -9,9 +10,10 @@ setwd("/Users/IMAC3/Documents/git-jpwrobinson/mpa-bmsc")
 
 #In R you can load packages from libraries where script has already been written
 
-#first you need to install the package
+#first you need to install the packages
 
 install.packages ("maptools")
+install.packages ("raster")
 install.packages ("sp")
 install.packages ("foreign")
 install.packages ("grid")
@@ -21,17 +23,27 @@ install.packages ("ggmap")
 install.packages ("mapproj")
 install.packages ("rgeos")
 
-#then you load the library
-#you have to reload the library each time you open R, but you only have to install.packages once in your life/computer
+#then you load the libraries
+#you have to reload the library each time you open R
+# but you only have to install.packages once in your life/computer
 library(maptools)
 library(raster)
-library (sp)
-library (foreign)
-library (grid)
-library (lattice)
+library(sp)
+library(foreign)
+library(grid)
+library(lattice)
 library(ggplot2)
 library(ggmap)
 library(mapproj)
+
+
+### Several ways of making maps in R - let's explore a few 
+### Use whichever you are comfortable with, though note that
+# some are easier than others to customise
+
+##---------------------------------------------------------------
+## 1. The GGPLOT method. Using data in the map package
+##---------------------------------------------------------------
 
 #lets load up some map data
 ## <- is used in R to assign objects to your workspace 
@@ -64,6 +76,10 @@ ggplot(canada.df, aes(long, lat, group=group))+geom_polygon()+
 #tell it to zoom in on by giving lats and longs
 #ggplot(canada.df, aes(x=c(-125.5,-124.5), y=c(48.5,49.5), group=group))+geom_polygon()+
 #  labs(title = "Canada")
+
+##---------------------------------------------------------------
+## 2. The Google Maps method. Using images from Google Maps.
+##---------------------------------------------------------------
 
 #lets use google maps since the resolution is a lot better
 vanisle<-get_map(location="Vancouver Island", zoom = 7, maptype="hybrid")
@@ -130,7 +146,10 @@ ggmap(bmsc) + geom_point(data = bmsc.pts, aes(x =long, y= lat,size = density), a
           axis.title = element_blank(), 
           axis.ticks=element_blank())
 
-#OR another way to plot this..
+##---------------------------------------------------------------
+## 3. The R plot + co-ordinate system method. Using GPS points - nothing else!
+##---------------------------------------------------------------
+
 #First change time into a POSIXct object. 
 #load your data
 bmsc.pts <-read.csv("lab1/GPStest.csv")
@@ -159,15 +178,27 @@ lines(lat~long,data=grass, col="green", cex=2)
 #Drawing Polygons form coordinates
 #lets check what the function does
 ?polygon
-polygon(bmsc.pts$lat,bmsc.pts$long)
+## full sampling area polygon
+polygon(bmsc.pts$long,bmsc.pts$lat)
+## now habitat type Polygons
 polygon(gravel$long, gravel$lat, col = "black", border = "black")
 polygon(grass$long, grass$lat, col = "green", border = "green")
 
 #turn this into a spatial file, in R these are called "spatialpointsdataframes" or "spatialpolygonsdataframe
 #you need to do this in order to do spatial analyses such as 
-#caclucate area, overlay analyses, etc. 
+# calculate area, overlay analyses, etc. 
+## we use the coordinates() function
+
+## use the formula notation to indicate co-ordinates
 coordinates(gravel)<-~long+lat
+
+## check this worked - what is the 'class' of gravel?
+class(gravel)
+## SpatialPointsDataFrame. Worked.
+
 pts<-coordinates(gravel)
+
+
 # you need to make sure that the last point and first coincide
 pts2 <- rbind(pts, pts[1,])
 sp <- SpatialPolygons( list(  Polygons(list(Polygon(pts2)), 1)))
@@ -181,5 +212,10 @@ grass.pts2 <- rbind(grass.pts, grass.pts[1,])
 sp.grass <- SpatialPolygons( list(  Polygons(list(Polygon(grass.pts2)), 1)))
 plot(sp.grass, col="green", border="green")
 
+## estimate the area of the spatial polygon.
 library(rgeos)
 gArea(sp.grass)
+
+
+
+
