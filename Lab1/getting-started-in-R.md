@@ -1,5 +1,3 @@
-BIOL 462: Community & Ecosystem Ecology, R tutorial 1
-22nd Jan 2016
 
 ##Getting started in R
 
@@ -58,7 +56,7 @@ As a first example, let's write a simple function and make a plot. First, open a
 
 **Comment everything!** - you will need to revisit your scripts, and comments help to explain what your code actually means
 
-    #Started April 18th, by JKB
+    #Started April 18th, by JR
     #Purpose: To start learning R
 
 
