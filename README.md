@@ -1,7 +1,9 @@
 # mpa-bmsc
-R labs and data for Marine Protected Areas course at Bamfield Marine Science Centre (2016)
+R labs and data for Marine Protected Areas course at Bamfield Marine Sciences Centre (2016)
 
-####  Welcome to Marine Protected Areas 2016 at BMSC!
+# #1 R setup 
+
+#### Welcome to Marine Protected Areas 2016 at BMSC!
 
 This folder contains all of the R scripts and data files that we will be using in the labs section of the course.
 
@@ -33,7 +35,7 @@ install.packages("rgeos")
 install.packages("grid")
 ```
 
-In the console you should see R attempting to download and install 'packages'. Let this run until everything is installed.
+In the console you should see R attempting to download and install packages. Let this run until everything is installed.
 
 **4. Create a folder on your desktop called *MPA-labs***
 
