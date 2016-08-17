@@ -1,7 +1,33 @@
 # mpa-bmsc
-R labs and data for Marine Protected Areas course at Bamfield Marine Science Centre (2016)
+R labs and data for Marine Protected Areas course at Bamfield Marine Sciences Centre (2016)
 
-####  Welcome to Marine Protected Areas 2016 at BMSC!
+# Google doc link for sharing data
+
+https://docs.google.com/spreadsheets/d/1UmbazNUiVhUBbNdMPN5QGwIK6zjmbh0BMdNvR_L4x4U/edit#gid=0
+
+# #2 Where's Scott's bay?
+
+If you're looking for Scott's bay in the ggmap package, try these co-ordinates...
+
+```
+bmsc<-get_map(location=c(lon=-125.14712,lat=48.83410), zoom = 19,maptype=c("satellite"))  
+BMSC.map<-ggmap(bmsc)+labs(title="BMSC")   
+print(BMSC.map)
+```
+
+Not the best looking map, but high-resolution shape files are hard to find. If you add your GPS points to the map we can see how accurate our GPS/googlemap combo is going to be.
+
+```
+bmsc<-get_map(location=c(lon=-125.14712,lat=48.83410), zoom = 19,maptype=c("satellite"))  
+BMSC.map<-ggmap(bmsc)+labs(title="BMSC")+ geom_point(data = transect.pts, aes(x =long, y= lat,size = percent_cover), alpha=0.5)   
+print(BMSC.map)
+```
+
+Working on an alternative approach with coastline files and I'll keep you all posted.
+
+# #1 R setup 
+
+#### Welcome to Marine Protected Areas 2016 at BMSC!
 
 This folder contains all of the R scripts and data files that we will be using in the labs section of the course.
 
@@ -33,7 +59,7 @@ install.packages("rgeos")
 install.packages("grid")
 ```
 
-In the console you should see R attempting to download and install 'packages'. Let this run until everything is installed.
+In the console you should see R attempting to download and install packages. Let this run until everything is installed.
 
 **4. Create a folder on your desktop called *MPA-labs***
 
