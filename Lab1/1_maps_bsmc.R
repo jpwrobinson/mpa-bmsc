@@ -12,16 +12,16 @@ setwd("/Users/IMAC3/Documents/git-jpwrobinson/mpa-bmsc")
 
 #first you need to install the packages
 
-install.packages ("maptools")
-install.packages ("raster")
-install.packages ("sp")
-install.packages ("foreign")
-install.packages ("grid")
-install.packages ("lattice")
-install.packages ("ggplot2")
-install.packages ("ggmap")
-install.packages ("mapproj")
-install.packages ("rgeos")
+#install.packages ("maptools")
+#install.packages ("raster")
+#install.packages ("sp")
+#install.packages ("foreign")
+#install.packages ("grid")
+#install.packages ("lattice")
+#install.packages ("ggplot2")
+#install.packages ("ggmap")
+#install.packages ("mapproj")
+#install.packages ("rgeos")
 
 #then you load the libraries
 #you have to reload the library each time you open R
@@ -74,8 +74,8 @@ ggplot(canada.df, aes(long, lat, group=group))+geom_polygon()+
 #let zoom in on Bamfield
 #the database doesn't let you pick bamfield (low resolution the units are the country), but you can
 #tell it to zoom in on by giving lats and longs
-#ggplot(canada.df, aes(x=c(-125.5,-124.5), y=c(48.5,49.5), group=group))+geom_polygon()+
-#  labs(title = "Canada")
+ggplot(canada.df, aes(x=long,y=lat, group=group))+geom_polygon()+
+  labs(title = "Canada") + lims(x=c(-125.5,-124.5), y=c(48.5,49.5))
 
 ##---------------------------------------------------------------
 ## 2. The Google Maps method. Using images from Google Maps.
@@ -92,7 +92,7 @@ print(VanIsle.map)
 BMSC<-get_map(location="Bamfield", zoom = 14, maptype="hybrid")
 
 #lets take a look at what the function get_map does 
-?get_map
+
 
 #this plots the map
 BMSE.map<-ggmap(BMSC)+labs(title="Bamfield")
@@ -104,6 +104,11 @@ bmsc<-get_map(location=c(lon=-125.1356,lat=48.83528), zoom = 19,maptype=c("satel
 BMSC.map<-ggmap(bmsc)+labs(title="BMSC")
 print(BMSC.map)
 
+
+#lat long from the internet 48.834384, -125.147002
+bmsc<-get_map(location=c(lon=-125.14712,lat=48.83410), zoom = 19,maptype=c("satellite"))
+BMSC.map<-ggmap(bmsc)+labs(title="BMSC")
+print(BMSC.map)
 #-----------------------------------------------------------------------------
 #----------------------HEAD OUTSIDE TO COLLECT GPS POINTS---------------------
 #-----------------------------------------------------------------------------
@@ -221,7 +226,6 @@ plot(sp.grass, col="green", border="green")
 ## estimate the area of the spatial polygon.
 library(rgeos)
 gArea(sp.grass)
-
 
 
 
