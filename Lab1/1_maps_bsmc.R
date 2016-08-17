@@ -74,8 +74,8 @@ ggplot(canada.df, aes(long, lat, group=group))+geom_polygon()+
 #let zoom in on Bamfield
 #the database doesn't let you pick bamfield (low resolution the units are the country), but you can
 #tell it to zoom in on by giving lats and longs
-#ggplot(canada.df, aes(x=c(-125.5,-124.5), y=c(48.5,49.5), group=group))+geom_polygon()+
-#  labs(title = "Canada")
+ggplot(canada.df, aes(x=long, y=lat, group=group))+geom_polygon()+
+  labs(title = "Canada") + lims(x=c(-125.5,-124.5), y=c(48.5,49.5))
 
 ##---------------------------------------------------------------
 ## 2. The Google Maps method. Using images from Google Maps.
@@ -95,8 +95,8 @@ BMSC<-get_map(location="Bamfield", zoom = 14, maptype="hybrid")
 ?get_map
 
 #this plots the map
-BMSE.map<-ggmap(BMSC)+labs(title="Bamfield")
-print(BMSE.map)
+BMSC.map<-ggmap(BMSC)+labs(title="Bamfield")
+print(BMSC.map)
 
 #lets get closer to bamfield
 #lat long from the internet lon=-125.1356,lat=48.83528
