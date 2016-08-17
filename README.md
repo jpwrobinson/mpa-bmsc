@@ -1,6 +1,10 @@
 # mpa-bmsc
 R labs and data for Marine Protected Areas course at Bamfield Marine Sciences Centre (2016)
 
+# Google doc link for sharing data
+
+https://docs.google.com/spreadsheets/d/1UmbazNUiVhUBbNdMPN5QGwIK6zjmbh0BMdNvR_L4x4U/edit#gid=0
+
 # #2 Where's Scott's bay?
 
 If you're looking for Scott's bay in the ggmap package, try these co-ordinates...
