@@ -1,6 +1,22 @@
 # mpa-bmsc
 R labs and data for Marine Protected Areas course at Bamfield Marine Sciences Centre (2016)
 
+# #7 ggplotting your diversity data
+
+You can use ggplot to look at trends in the diversity estimates across quadrats, transects and sites. Ignore all of the ggmap stuff - here you want to use ggplot() and build up your plot by adding different lines of code that describe different objects (points, lines etc.) or style aspects (themes, colour palettes etc.). The points and lines are most important - make sure you can display the data properly before moving onto formatting stuff.
+
+So, you always start with:
+
+```
+ggplot(data, aes(x = x, y = y)) + geom_SOMETHING()
+```
+
+Data is your dataset, and y and x are the column names for the data on the y and x axes. You can use a geom_point or geom_line or geom_boxplot to display your data. To distinguish between sites or quadrats you might use colours (in the aes() part, say col = SOMETHING), shapes (shape = SOMETHING), colour fill (fill = SOMETHING). Also look into ```+ facet_wrap(~SOMETHING)``` to make multipanel plots (maybe for different sites or transects).
+
+Remember to check your brackets and + symbols. If your plot broke after you added something but was working earlier, try running the old plot code first to see that everything is still working.
+
+Again: docs.ggplot2.org/current/index.html for good examples.
+
 # #6 Scale bars and north arrows.
 
 Worse case scenario, copy and paste a North Arrow onto your final saved pdf. Up is North, so we're ok. 
