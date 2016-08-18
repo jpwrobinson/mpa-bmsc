@@ -3,7 +3,30 @@ R labs and data for Marine Protected Areas course at Bamfield Marine Sciences Ce
 
 # #6 Scale bars and north arrows.
 
-Worse case scenario, copy and paste a North Arrow onto your final saved pdf. Up is North, so we're ok. For the scale bar, I am working on a quick fix and I'll put the code up here for you all to use.
+Worse case scenario, copy and paste a North Arrow onto your final saved pdf. Up is North, so we're ok. 
+
+For the scale bar, we're going to need to install a new package (sorry....)
+
+```
+install.packages('ggsn')
+library(ggsn)
+```
+
+Then, you need to change the name of your longitude column from 'lon' to 'long'. Substitute your data frame name into 'data' below:
+
+```
+colnames(data)[colnames(data)=='lon']<-'long'
+```
+
+Then, add this to your ggplot code with an extra + symbol
+
+```
++ scalebar(locations, dist = 0.02, dd2km = T, model = 'WGS84') 
+```
+
+Close your eyes. Push command/control + enter. Pray. Open your eyes. Voila. Scale bar. 
+
+Might need some customisation, so look around the help file (?scalebar) to find how to change things.
 
 Any other R errors and questions - see me!
 
