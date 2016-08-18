@@ -14,8 +14,8 @@ Download and save as csv. The different sheets/tabs on the bottom have the densi
 ```
 bmsc<-get_map(location=c(lon=-125.14712,lat=48.83410), zoom = 19,maptype=c("satellite"))  
 BMSC.map<-ggmap(bmsc)+labs(title="Scott's Bay intertidal community") + 
-          geom_point(data = transect.pts, aes(x =long, y= lat,size = barn_dens, col=factor(transect)), alpha=0.5) +
-          geom_line(data=transect.pts, aes(x=long, y=lat, group=transect))
+          geom_point(data = transect.pts, aes(x =lon, y= lat,size = barn_dens, col=factor(transect)), alpha=0.5) +
+          geom_line(data=transect.pts, aes(x=lon, y=lat, group=transect))
 print(BMSC.map)
 ```
 Lots and lots of information on google for formatting ggplot and ggmap figures...copy-paste-edit is encouraged!
