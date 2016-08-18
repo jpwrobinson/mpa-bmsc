@@ -1,7 +1,25 @@
 # mpa-bmsc
 R labs and data for Marine Protected Areas course at Bamfield Marine Sciences Centre (2016)
 
-# Google doc link for sharing data
+
+# #4 Mapping and plotting transect data
+
+You should be able to use the ggplot code below to make your maps. ```geom_line()``` will add lines to your map, ```geom_point()```` will add points. Densities and percent covers could be displayed with colours or point sizes (size = )...be creative. What is the best way to display your data?
+
+The class data is in the Lab1 folder. The files are: "scott_class_averaged.csv" and "scott_class_transect_pts.csv".
+
+```
+bmsc<-get_map(location=c(lon=-125.14712,lat=48.83410), zoom = 19,maptype=c("satellite"))  
+BMSC.map<-ggmap(bmsc)+labs(title="Scott's Bay intertidal community") + 
+          geom_point(data = transect.pts, aes(x =long, y= lat,size = barn_dens, col=factor(transect)), alpha=0.5) +
+          geom_line(data=transect.pts, aes(x=long, y=lat, group=transect))
+print(BMSC.map)
+```
+Lots and lots of information on google for formatting ggplot and ggmap figures...copy-paste-edit is encouraged!
+
+http://docs.ggplot2.org/current/ and search 'DO XYZ in ggplot R'
+
+# #3 Google doc link for sharing data
 
 https://docs.google.com/spreadsheets/d/1UmbazNUiVhUBbNdMPN5QGwIK6zjmbh0BMdNvR_L4x4U/edit#gid=0
 
@@ -23,7 +41,7 @@ BMSC.map<-ggmap(bmsc)+labs(title="BMSC")+ geom_point(data = transect.pts, aes(x 
 print(BMSC.map)
 ```
 
-Working on an alternative approach with coastline files and I'll keep you all posted.
+Working on an alternative approach with coastline files [and I'll keep you all posted.] didn't happen. ggmaps working fine.
 
 # #1 R setup 
 
