@@ -1,6 +1,19 @@
 # mpa-bmsc
 R labs and data for Marine Protected Areas course at Bamfield Marine Sciences Centre (2016)
 
+# #6 Scale bars and north arrows.
+
+Worse case scenario, copy and paste a North Arrow onto your final saved pdf. Up is North, so we're ok. For the scale bar, I am working on a quick fix and I'll put the code up here for you all to use.
+
+Any other R errors and questions - see me!
+
+# #5 Calculating diversity at Scott's bay
+
+The data for calculating diversity at Scott's bay is available at: https://docs.google.com/spreadsheets/d/1IGxccG9DPchddATnYBErAOePjitYwK1InpuQbtyHJBI/edit?usp=sharing
+
+Export or copy the data into a spreadsheet (excel file is ok, but you could use csv later to plot in R). You should be able to calculate the Simpson Diveristy Index for each transect, and then follow the rest of the lab instructions.
+
+Enter your Ross Islet data in the same format for future analysis!
 
 # #4 Mapping and plotting transect data
 
