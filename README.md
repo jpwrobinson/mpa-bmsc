@@ -6,7 +6,10 @@ R labs and data for Marine Protected Areas course at Bamfield Marine Sciences Ce
 
 You should be able to use the ggplot code below to make your maps. ```geom_line()``` will add lines to your map, ```geom_point()```` will add points. Densities and percent covers could be displayed with colours or point sizes (size = )...be creative. What is the best way to display your data?
 
-The class data is in the Lab1 folder. The files are: "scott_class_averaged.csv" and "scott_class_transect_pts.csv".
+The class data is in Google Doc:
+https://docs.google.com/spreadsheets/d/1UmbazNUiVhUBbNdMPN5QGwIK6zjmbh0BMdNvR_L4x4U/edit#gid=0
+
+Download and save as csv. The different sheets/tabs on the bottom have the density/cover data, and the locations of transect start and end points.
 
 ```
 bmsc<-get_map(location=c(lon=-125.14712,lat=48.83410), zoom = 19,maptype=c("satellite"))  
