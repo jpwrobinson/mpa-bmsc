@@ -1,6 +1,23 @@
 # mpa-bmsc
 R labs and data for Marine Protected Areas course at Bamfield Marine Sciences Centre (2016)
 
+# #11 Publication quality plots
+
+Lab 2 asks you to make some high-quality figures, but isn't clear about what a high-quality figure might be. There are a few things to think about when making good plots in R:
+
+* colour helps to distinguish between different groups (like transects or species or sites)
+* axis titles and labels are important - make them large enough to read from distance, and informative enough to indicate what the data is
+* how are you displaying the data? can you use points with lines, or are boxplots the most informative? you want to convince someone else that you have a pattern (or no pattern) in your data, so make it easy for the reader to see what's going on
+* legends? you need legends. ggplot has built-in legends, not sure about excel..
+
+Bottom-line: can the reader understand what your results say, without reading much of the text? 
+
+# #10 North Arrow update
+
+Emily's figured out the north arrow issue. If you like (and I know most of you have already put north arrows in so don't worry if you don't fancy changing anything), create your map as usual, but instead of ```print(bsmc.map)``` do ```north2(bsmc.map, 0.2, 0.4)``` and see how you go.
+
+You'll need the ggsn package that gives you the scale bar. The 0.2, 0.4 indicate the relative position of the north arrow, so change around if you're not happy with the position.
+
 # #9 BETA DIVERSITY UPDATE
 
 Please all note that Transect 1 at Scott's bay DID record Pistaster and leather seastar species, and acorn and brown barnacles. These species are now on the master quadrat dataset on google docs.
