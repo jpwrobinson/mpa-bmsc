@@ -1,6 +1,13 @@
 # mpa-bmsc
 R labs and data for Marine Protected Areas course at Bamfield Marine Sciences Centre (2016)
 
+# #8 Shitty north arrow.
+
+```
+ geom_segment(aes(x = -125.1465, y = 48.83452, xend = -125.1465, yend = 48.83460),col="white", arrow = arrow(length = unit(0.5, "cm"))) +
+ annotate("text", x=-125.1465, y=48.83462, label="N", col='white')
+  ```
+
 # #7 ggplotting your diversity data
 
 You can use ggplot to look at trends in the diversity estimates across quadrats, transects and sites. Ignore all of the ggmap stuff - here you want to use ggplot() and build up your plot by adding different lines of code that describe different objects (points, lines etc.) or style aspects (themes, colour palettes etc.). The points and lines are most important - make sure you can display the data properly before moving onto formatting stuff.
