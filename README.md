@@ -1,6 +1,10 @@
 # mpa-bmsc
 R labs and data for Marine Protected Areas course at Bamfield Marine Sciences Centre (2016)
 
+# #9 BETA DIVERSITY UPDATE
+
+Please all note that Transect 1 at Scott's bay DID record Pistaster and leather seastar species, and acorn and brown barnacles. These species are now on the master quadrat dataset on google docs.
+
 # #8 Shitty north arrow.
 
 ```
