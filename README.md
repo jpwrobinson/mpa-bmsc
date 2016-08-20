@@ -1,6 +1,12 @@
 # mpa-bmsc
 R labs and data for Marine Protected Areas course at Bamfield Marine Sciences Centre (2016)
 
+# #12 Lab 3- phytoplankton models: GOOGLE DOC
+
+https://docs.google.com/spreadsheets/d/1TJ5INZAv4U8WJ6xwYy25QnEIOCaDW6GARRD_l47ewbs/edit?usp=sharing
+
+Just enter your carbon estimates for each month, for each parameter value that you are changing (e.g. depth, or latitude, or grazing threshold), for your assigned phytoplankton (diatom or dinoflagellate). You will use the full class dataset to make graphs and answer the 7 questions.
+
 # #11 Publication quality plots
 
 Lab 2 asks you to make some high-quality figures, but isn't clear about what a high-quality figure might be. There are a few things to think about when making good plots in R:
