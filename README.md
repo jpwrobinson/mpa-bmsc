@@ -1,6 +1,21 @@
 # mpa-bmsc
 R labs and data for Marine Protected Areas course at Bamfield Marine Sciences Centre (2016)
 
+# #13 Prep for lab 5 - animal movement data
+
+Let's try and hit the ground running next lab - can you all please ensure that you have the 'maptools' and 'sp' packages installed before the lab starts (10am Thursday)
+
+To check, run
+
+```
+library(sp)
+library(maptools)
+```
+
+If you get errors, use install.packages() command to install packages.
+
+ALSO - please make sure you have Google Earth installed. I can pass around the installer in the lab today.
+
 # #12 Lab 3- phytoplankton models: GOOGLE DOC
 
 https://docs.google.com/spreadsheets/d/1TJ5INZAv4U8WJ6xwYy25QnEIOCaDW6GARRD_l47ewbs/edit?usp=sharing
