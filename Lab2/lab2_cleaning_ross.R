@@ -46,3 +46,6 @@ ggplot(dat1[dat1$abundance<250,], aes( species,abundance, col=factor(observer)))
 ggplot(dat1, aes(species, abundance, fill=factor(transect))) +
   geom_boxplot(day~team)
 
+
+
+
